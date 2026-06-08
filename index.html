@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中藥橱櫃</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1>🌿 中藥橱櫃</h1>
+      <span class="edit-badge">編輯中</span>
+    </div>
+    <input id="search-input" type="search" placeholder="搜尋藥品名稱...">
+  </header>
+
+  <nav id="tabs"></nav>
+
+  <main>
+    <div id="search-results" class="hidden"></div>
+    <div id="cabinet-content"></div>
+  </main>
+
+  <!-- 新增藥品 Modal -->
+  <div id="add-modal" class="modal hidden">
+    <div class="modal-content">
+      <p class="modal-title">新增藥品</p>
+      <p id="modal-location" class="modal-location"></p>
+
+      <input type="hidden" id="modal-cabinet-val">
+      <input type="hidden" id="modal-layer-val">
+
+      <div class="form-field">
+        <label for="add-name">藥名</label>
+        <input id="add-name" type="text" placeholder="例：白芷">
+      </div>
+      <div class="form-field">
+        <label for="add-notes">備註（選填）</label>
+        <input id="add-notes" type="text" placeholder="例：3瓶、未">
+      </div>
+
+      <div class="modal-actions">
+        <button id="add-cancel" class="btn-secondary">取消</button>
+        <button id="add-confirm" class="btn-primary">新增</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 匯入初始資料（編輯模式，首次使用） -->
+  <button id="seed-btn" class="hidden">匯入初始資料</button>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
